@@ -126,7 +126,7 @@ export const Contact = () => {
               <Link to="/contact" className="hover:underline transition-all duration-200">Contact</Link>
             </div>
           </div>
-
+          
           {/* Social Media Icons */}
           <div className="flex space-x-4">
             <a href="#" className="text-white hover:text-blue-500 transition-colors duration-300"><FaFacebookF /></a>
