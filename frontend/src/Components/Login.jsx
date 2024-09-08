@@ -5,7 +5,15 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../Components/style.css";
-import{AuthContext} from "../AuthContext";
+import { AuthContext } from "../AuthContext";
+
+// Animation variants for Framer Motion
+const containerVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  exit: { opacity: 0, scale: 0.8, transition: { duration: 0.5 } },
+};
+
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -50,8 +58,32 @@ export const Login = () => {
         exit="exit"
       >
         <h2 className="text-3xl font-semibold text-center mb-6">Login</h2>
-        <form onSubmit={handleLogin}>
-          {/* Form contents */}
+        <form onSubmit={handleLogin} className="flex flex-col space-y-4">
+          {/* Email Input */}
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+          {/* Password Input */}
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="w-full py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors duration-200"
+          >
+            Login
+          </button>
         </form>
         <ToastContainer />
       </motion.div>
