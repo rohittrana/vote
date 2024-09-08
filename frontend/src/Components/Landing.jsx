@@ -1,13 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Import Link component
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedinIn,
-} from "react-icons/fa";
-
+import { Link } from "react-router-dom";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { useAuth } from "../AuthContext";
 export const Landing = () => {
+  const { isLoggedIn, logout } = useAuth(); // Destructure from AuthContext
+
   return (
     <div>
       {/* Navigation Bar */}
@@ -28,23 +25,35 @@ export const Landing = () => {
         </ul>
 
         <div className="flex items-center space-x-4 mt-4 md:mt-0">
+          {/* Search bar */}
           <input
             type="text"
             placeholder="Search..."
             className="p-2 rounded text-black"
           />
 
-          <Link to="/login">
-            <button className="bg-white text-purple-800 p-2 rounded hover:bg-gray-200">
-              Login
+          {/* Conditionally render buttons based on login status */}
+          {!isLoggedIn ? (
+            <>
+              <Link to="/login">
+                <button className="bg-white text-purple-800 p-2 rounded hover:bg-gray-200">
+                  Login
+                </button>
+              </Link>
+              <Link to="/signup">
+                <button className="bg-white text-purple-800 p-2 rounded hover:bg-gray-200">
+                  Signup
+                </button>
+              </Link>
+            </>
+          ) : (
+            <button
+              onClick={logout}
+              className="bg-white text-red-800 p-2 rounded hover:bg-gray-200"
+            >
+              Sign Out
             </button>
-          </Link>
-          
-          <Link to="/signup">
-            <button className="bg-white text-purple-800 p-2 rounded hover:bg-gray-200">
-              Signup
-            </button>
-          </Link>
+          )}
         </div>
       </nav>
 
@@ -153,4 +162,5 @@ export const Landing = () => {
     </div>
   );
 };
+
 export default Landing;
