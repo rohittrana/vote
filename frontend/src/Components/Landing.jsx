@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { useAuth } from "../AuthContext";
+
 export const Landing = () => {
   const { isLoggedIn, logout } = useAuth(); // Destructure from AuthContext
 
@@ -21,6 +22,10 @@ export const Landing = () => {
           </li>
           <li className="text-white p-2 hover:bg-purple-700 rounded">
             <Link to="/contact">Contact</Link>
+          </li>
+          {/* Add the new Candidates link here */}
+          <li className="text-white p-2 hover:bg-purple-700 rounded">
+            <Link to="/candidates">Candidates</Link>
           </li>
         </ul>
 
@@ -114,6 +119,8 @@ export const Landing = () => {
               <Link to="/about" className="hover:underline transition-all duration-200">About</Link>
               <Link to="/working" className="hover:underline transition-all duration-200">How it Works</Link>
               <Link to="/contact" className="hover:underline transition-all duration-200">Contact Us</Link>
+              {/* Add the new Candidates link here */}
+              <Link to="/candidates" className="hover:underline transition-all duration-200">Candidates</Link>
             </div>
           </div>
 

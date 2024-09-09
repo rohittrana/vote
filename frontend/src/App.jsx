@@ -7,7 +7,7 @@ import Login from "./Components/Login";
 import Working from "./Components/Working";
 import Contact from "./Components/Contact";
 import { AuthProvider } from "./AuthContext";
-
+import CandidateInfo from "./Components/CandidateInfo";
 const App = () => {
   return (
     <AuthProvider>
@@ -19,6 +19,7 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/working" element={<Working />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/candidates" element={<CandidateInfo />} />
           <Route path="*" element={<Landing />} />
         </Routes>
       </Router>
