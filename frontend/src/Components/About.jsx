@@ -18,17 +18,20 @@ const About = () => {
             <Link to="/">Home</Link>
           </li>
           <li className="text-white p-2 hover:bg-purple-700 rounded">
-            <Link to="/">About</Link>
+            <Link to="/about">About</Link>
           </li>
           <li className="text-white p-2 hover:bg-purple-700 rounded">
             <Link to="/working">Working</Link>
           </li>
+          
           <li className="text-white p-2 hover:bg-purple-700 rounded">
             <Link to="/contact">Contact</Link>
           </li>
+          <li className="text-white p-2 hover:bg-purple-700 rounded">
+            <Link to="/candidate">Candidates</Link> {/* New Candidate Link */}
+          </li>
         </ul>
       </nav>
-      
 
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white py-20 px-8 text-center transition-colors duration-300 hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-blue-500">
@@ -138,16 +141,25 @@ const About = () => {
               <Link to="/" className="hover:underline transition-all duration-200">Home</Link>
               <Link to="/about" className="hover:underline transition-all duration-200">About</Link>
               <Link to="/working" className="hover:underline transition-all duration-200">Working</Link>
+              <Link to="/candidate" className="hover:underline transition-all duration-200">Candidate</Link>
               <Link to="/contact" className="hover:underline transition-all duration-200">Contact</Link>
             </div>
           </div>
 
-          {/* Social Media Icons */}
+          {/* Social Media Links */}
           <div className="flex space-x-4">
-            <a href="#" className="text-white hover:text-blue-500 transition-colors duration-300"><FaFacebookF /></a>
-            <a href="#" className="text-white hover:text-blue-400 transition-colors duration-300"><FaTwitter /></a>
-            <a href="#" className="text-white hover:text-pink-500 transition-colors duration-300"><FaInstagram /></a>
-            <a href="#" className="text-white hover:text-blue-600 transition-colors duration-300"><FaLinkedinIn /></a>
+            <a href="#" className="hover:text-blue-500 transition-all duration-200">
+              <FaFacebookF />
+            </a>
+            <a href="#" className="hover:text-blue-400 transition-all duration-200">
+              <FaTwitter />
+            </a>
+            <a href="#" className="hover:text-pink-500 transition-all duration-200">
+              <FaInstagram />
+            </a>
+            <a href="#" className="hover:text-blue-600 transition-all duration-200">
+              <FaLinkedinIn />
+            </a>
           </div>
         </div>
       </footer>
