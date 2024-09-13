@@ -4,48 +4,49 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/f
 import { useAuth } from "../AuthContext";
 
 export const Landing = () => {
-  const { isLoggedIn, logout } = useAuth();
+  const { isLoggedIn, logout } = useAuth(); // Destructure from AuthContext
 
   return (
     <div>
       {/* Navigation Bar */}
-      <nav className="fixed top-0 left-0 right-0 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 p-4 flex justify-between items-center z-50 shadow-lg">
-        <ul className="flex space-x-4">
-          <li className="text-white p-2 hover:bg-purple-700 rounded transition duration-300 ease-in-out transform hover:scale-105">
+      <nav className="bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 p-4 flex flex-wrap justify-between items-center">
+        <ul className="flex flex-wrap space-x-4">
+          <li className="text-white p-2 hover:bg-purple-700 rounded">
             <Link to="/">Home</Link>
           </li>
-          <li className="text-white p-2 hover:bg-purple-700 rounded transition duration-300 ease-in-out transform hover:scale-105">
+          <li className="text-white p-2 hover:bg-purple-700 rounded">
             <Link to="/about">About</Link>
           </li>
-          <li className="text-white p-2 hover:bg-purple-700 rounded transition duration-300 ease-in-out transform hover:scale-105">
+          <li className="text-white p-2 hover:bg-purple-700 rounded">
             <Link to="/working">Working</Link>
           </li>
-          <li className="text-white p-2 hover:bg-purple-700 rounded transition duration-300 ease-in-out transform hover:scale-105">
+          <li className="text-white p-2 hover:bg-purple-700 rounded">
             <Link to="/contact">Contact</Link>
           </li>
-          <li className="text-white p-2 hover:bg-purple-700 rounded transition duration-300 ease-in-out transform hover:scale-105">
+          {/* Add the new Candidates link here */}
+          <li className="text-white p-2 hover:bg-purple-700 rounded">
             <Link to="/candidates">Candidates</Link>
           </li>
         </ul>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 mt-4 md:mt-0">
           {/* Search bar */}
           <input
             type="text"
             placeholder="Search..."
-            className="p-2 rounded text-black shadow-inner"
+            className="p-2 rounded text-black"
           />
 
           {/* Conditionally render buttons based on login status */}
           {!isLoggedIn ? (
             <>
               <Link to="/login">
-                <button className="bg-white text-purple-800 p-2 rounded hover:bg-gray-200 transition duration-300 transform hover:scale-105">
+                <button className="bg-white text-purple-800 p-2 rounded hover:bg-gray-200">
                   Login
                 </button>
               </Link>
               <Link to="/signup">
-                <button className="bg-white text-purple-800 p-2 rounded hover:bg-gray-200 transition duration-300 transform hover:scale-105">
+                <button className="bg-white text-purple-800 p-2 rounded hover:bg-gray-200">
                   Signup
                 </button>
               </Link>
@@ -53,7 +54,7 @@ export const Landing = () => {
           ) : (
             <button
               onClick={logout}
-              className="bg-white text-red-800 p-2 rounded hover:bg-gray-200 transition duration-300 transform hover:scale-105"
+              className="bg-white text-red-800 p-2 rounded hover:bg-gray-200"
             >
               Sign Out
             </button>
@@ -62,51 +63,48 @@ export const Landing = () => {
       </nav>
 
       {/* Main Content Section */}
-      <div className="flex justify-center items-center flex-col min-h-screen pt-20">
-        {/* Image and Content Section */}
-        <div className="flex flex-col md:flex-row max-w-6xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
-          {/* Image Section */}
-          <div className="md:w-1/2">
-            <img
-              src="./Images/vote.jpg"
-              alt="Voting Image"
-              className="object-cover w-full h-full transform transition duration-500 hover:scale-105"
-            />
-          </div>
+      <div className="flex flex-col md:flex-row">
+        {/* Image Section */}
+        <div className="md:w-1/2 w-full">
+          <img
+            src="./Images/vote.jpg"
+            alt="Voting Image"
+            className="object-cover w-full h-full rounded-lg shadow-lg"
+          />
+        </div>
 
-          {/* Content Section */}
-          <div className="md:w-1/2 p-8 flex flex-col justify-center bg-gray-100 animate-fade-in-right">
-            <h1 className="text-4xl font-bold mb-4 animate-bounce-in text-center">Make Your Vote Count</h1>
-            <p className="text-lg mb-4 text-center">
-              Voting is the foundation of a democratic society. Every vote matters, and your voice deserves to be heard.
+        {/* Content Section */}
+        <div className="md:w-1/2 w-full flex flex-col justify-center p-8 bg-gray-100">
+          <h1 className="text-4xl font-bold mb-4">Make Your Vote Count</h1>
+          <p className="text-lg mb-4">
+            Voting is the foundation of a democratic society. Every vote matters, and your voice deserves to be heard.
+          </p>
+          <p className="text-lg mb-4">
+            By participating in elections, you contribute to shaping the future of your community and country. Your vote is your voice.
+          </p>
+          <a
+            href="#learn-more"
+            className="text-purple-800 hover:underline mb-4"
+          >
+            Learn more about how you can participate
+          </a>
+
+          <hr className="my-8 border-purple-500" />
+
+          {/* Additional Scrollable Information Section */}
+          <div className="overflow-y-auto h-64 p-4 bg-white rounded-lg shadow-md">
+            <h2 className="text-2xl font-semibold mb-4">Why Voting Matters</h2>
+            <p className="mb-4">
+              Voting gives you the power to influence important decisions that affect your life, such as healthcare, education, and employment. It's a civic duty and an opportunity to make your opinions count.
             </p>
-            <p className="text-lg mb-4 text-center">
-              By participating in elections, you contribute to shaping the future of your community and country. Your vote is your voice.
+            <h2 className="text-2xl font-semibold mb-4">How to Register to Vote</h2>
+            <p className="mb-4">
+              Registering to vote is simple. You can do it online, by mail, or in person at your local registration office. Make sure to check the deadlines and requirements in your state.
             </p>
-            <a
-              href="#learn-more"
-              className="text-purple-800 hover:underline mb-4 text-center"
-            >
-              Learn more about how you can participate
-            </a>
-
-            <hr className="my-8 border-purple-500" />
-
-            {/* Additional Scrollable Information Section */}
-            <div className="overflow-y-auto h-64 p-4 bg-white rounded-lg shadow-md">
-              <h2 className="text-2xl font-semibold mb-4">Why Voting Matters</h2>
-              <p className="mb-4">
-                Voting gives you the power to influence important decisions that affect your life, such as healthcare, education, and employment. It's a civic duty and an opportunity to make your opinions count.
-              </p>
-              <h2 className="text-2xl font-semibold mb-4">How to Register to Vote</h2>
-              <p className="mb-4">
-                Registering to vote is simple. You can do it online, by mail, or in person at your local registration office. Make sure to check the deadlines and requirements in your state.
-              </p>
-              <h2 className="text-2xl font-semibold mb-4">Where to Vote</h2>
-              <p className="mb-4">
-                On election day, you can vote at your assigned polling place or by mail. Ensure you know the location and hours of your polling place, and bring any necessary identification.
-              </p>
-            </div>
+            <h2 className="text-2xl font-semibold mb-4">Where to Vote</h2>
+            <p className="mb-4">
+              On election day, you can vote at your assigned polling place or by mail. Ensure you know the location and hours of your polling place, and bring any necessary identification.
+            </p>
           </div>
         </div>
       </div>
@@ -121,6 +119,7 @@ export const Landing = () => {
               <Link to="/about" className="hover:underline transition-all duration-200">About</Link>
               <Link to="/working" className="hover:underline transition-all duration-200">How it Works</Link>
               <Link to="/contact" className="hover:underline transition-all duration-200">Contact Us</Link>
+              {/* Add the new Candidates link here */}
               <Link to="/candidates" className="hover:underline transition-all duration-200">Candidates</Link>
             </div>
           </div>
