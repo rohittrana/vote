@@ -90,13 +90,13 @@ export const Contact = () => {
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Our Address</h2>
           <p className="text-lg md:text-xl mb-4 text-center">
-            1234 Voting Lane, Democracy City, DC 56789, USA
+            VIT BHOPAL ,SEHORE
           </p>
           <p className="text-lg md:text-xl mb-4 text-center">
-            Email: contact@votingplatform.com
+            Email: Kirti@gmail.com
           </p>
           <p className="text-lg md:text-xl mb-4 text-center">
-            Phone: +1 234 567 8900
+            Phone: +91 8872241006
           </p>
         </div>
       </section>

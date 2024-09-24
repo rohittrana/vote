@@ -81,7 +81,7 @@ const About = () => {
               <div className="bg-gray-100 p-6 rounded-lg shadow-lg text-center transform hover:scale-105 hover:bg-gray-200 transition-all duration-300">
                 {/* Image Placeholder */}
                 <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4"></div>
-                <h4 className="text-xl font-bold mb-2">John Doe</h4>
+                <h4 className="text-xl font-bold mb-2">Rohit Rana</h4>
                 <p className="text-gray-700">CEO & Founder</p>
               </div>
             </div>
@@ -90,7 +90,7 @@ const About = () => {
             <div className="w-full md:w-1/3 lg:w-1/4 p-4">
               <div className="bg-gray-100 p-6 rounded-lg shadow-lg text-center transform hover:scale-105 hover:bg-gray-200 transition-all duration-300">
                 <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4"></div>
-                <h4 className="text-xl font-bold mb-2">Jane Smith</h4>
+                <h4 className="text-xl font-bold mb-2">Nishchay</h4>
                 <p className="text-gray-700">CTO</p>
               </div>
             </div>
@@ -98,7 +98,15 @@ const About = () => {
             <div className="w-full md:w-1/3 lg:w-1/4 p-4">
               <div className="bg-gray-100 p-6 rounded-lg shadow-lg text-center transform hover:scale-105 hover:bg-gray-200 transition-all duration-300">
                 <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4"></div>
-                <h4 className="text-xl font-bold mb-2">Emily Johnson</h4>
+                <h4 className="text-xl font-bold mb-2">Kirti Jirti </h4>
+                <p className="text-gray-700">COO</p>
+              </div>
+            </div>
+            
+            <div className="w-full md:w-1/3 lg:w-1/4 p-4">
+              <div className="bg-gray-100 p-6 rounded-lg shadow-lg text-center transform hover:scale-105 hover:bg-gray-200 transition-all duration-300">
+                <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4"></div>
+                <h4 className="text-xl font-bold mb-2">Mayank </h4>
                 <p className="text-gray-700">COO</p>
               </div>
             </div>
