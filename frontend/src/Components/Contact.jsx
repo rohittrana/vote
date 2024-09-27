@@ -21,6 +21,9 @@ export const Contact = () => {
           <li>
             <Link to="/contact" className="text-white p-2 hover:bg-purple-700 rounded">Contact</Link>
           </li>
+          <li>
+          <Link to="/candidates" className="hover:underline transition-all duration-200">Candidates</Link>
+          </li>
         </ul>
       </nav>
 
