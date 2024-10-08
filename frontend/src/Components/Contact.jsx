@@ -6,27 +6,6 @@ import '../Components/style.css';
 export const Contact = () => {
   return (
     <div>
-      {/* Navigation Bar */}
-      <nav className="bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 p-4 flex justify-between items-center">
-        <ul className="flex space-x-4">
-          <li>
-            <Link to="/" className="text-white p-2 hover:bg-purple-700 rounded">Home</Link>
-          </li>
-          <li>
-            <Link to="/about" className="text-white p-2 hover:bg-purple-700 rounded">About</Link>
-          </li>
-          <li>
-            <Link to="/working" className="text-white p-2 hover:bg-purple-700 rounded">Working</Link>
-          </li>
-          <li>
-            <Link to="/contact" className="text-white p-2 hover:bg-purple-700 rounded">Contact</Link>
-          </li>
-          <li>
-          <Link to="/candidates" className="hover:underline transition-all duration-200">Candidates</Link>
-          </li>
-        </ul>
-      </nav>
-
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-green-500 via-teal-500 to-blue-500 text-white py-20 px-8 text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-4">Contact Us</h1>

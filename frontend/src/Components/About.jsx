@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { IoArrowBackOutline } from 'react-icons/io5';
 import {
   FaFacebookF,
   FaTwitter,
@@ -11,25 +10,6 @@ import {
 const About = () => {
   return (
     <div>
-      {/* Navigation Bar */}
-      <nav className="bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 p-4 flex flex-wrap justify-between items-center">
-        <ul className="flex flex-wrap space-x-4">
-          <li className="text-white p-2 hover:bg-purple-700 rounded">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="text-white p-2 hover:bg-purple-700 rounded">
-            <Link to="/">About</Link>
-          </li>
-          <li className="text-white p-2 hover:bg-purple-700 rounded">
-            <Link to="/working">Working</Link>
-          </li>
-          <li className="text-white p-2 hover:bg-purple-700 rounded">
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-      </nav>
-      
-
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white py-20 px-8 text-center transition-colors duration-300 hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-blue-500">
         <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-down">About Us</h1>
@@ -152,12 +132,13 @@ const About = () => {
 
           {/* Social Media Icons */}
           <div className="flex space-x-4">
-            <a href="#" className="text-white hover:text-blue-500 transition-colors duration-300"><FaFacebookF /></a>
-            <a href="#" className="text-white hover:text-blue-400 transition-colors duration-300"><FaTwitter /></a>
-            <a href="#" className="text-white hover:text-pink-500 transition-colors duration-300"><FaInstagram /></a>
-            <a href="#" className="text-white hover:text-blue-600 transition-colors duration-300"><FaLinkedinIn /></a>
+            <a href="#" className="hover:text-blue-500 transition-colors duration-200"><FaFacebookF /></a>
+            <a href="#" className="hover:text-blue-400 transition-colors duration-200"><FaTwitter /></a>
+            <a href="#" className="hover:text-pink-500 transition-colors duration-200"><FaInstagram /></a>
+            <a href="#" className="hover:text-blue-700 transition-colors duration-200"><FaLinkedinIn /></a>
           </div>
         </div>
+        <p className="text-center mt-4">&copy; 2024 SecureVote. All Rights Reserved.</p>
       </footer>
     </div>
   );

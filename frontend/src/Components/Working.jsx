@@ -6,24 +6,6 @@ import '../Components/style.css';
 export const Working = () => {
   return (
     <div>
-      {/* Navigation Bar */}
-      <nav className="bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 p-4 flex flex-wrap justify-between items-center">
-        <ul className="flex flex-wrap space-x-4">
-          <li className="text-white p-2 hover:bg-purple-700 rounded">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="text-white p-2 hover:bg-purple-700 rounded">
-            <Link to="/about">About</Link>
-          </li>
-          <li className="text-white p-2 hover:bg-purple-700 rounded">
-            <Link to="/working">Working</Link>
-          </li>
-          <li className="text-white p-2 hover:bg-purple-700 rounded">
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-      </nav>
-
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white py-20 px-8 text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-4">How It Works</h1>

@@ -1,67 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import { useAuth } from "../AuthContext";
 
 export const Landing = () => {
-  const { isLoggedIn, logout } = useAuth(); // Destructure from AuthContext
-
   return (
     <div>
-      {/* Navigation Bar */}
-      <nav className="bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 p-4 flex flex-wrap justify-between items-center">
-        <ul className="flex flex-wrap space-x-4">
-          <li className="text-white p-2 hover:bg-purple-700 rounded">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="text-white p-2 hover:bg-purple-700 rounded">
-            <Link to="/about">About</Link>
-          </li>
-          <li className="text-white p-2 hover:bg-purple-700 rounded">
-            <Link to="/working">Working</Link>
-          </li>
-          <li className="text-white p-2 hover:bg-purple-700 rounded">
-            <Link to="/contact">Contact</Link>
-          </li>
-          {/* Add the new Candidates link here */}
-          <li className="text-white p-2 hover:bg-purple-700 rounded">
-            <Link to="/candidates">Candidates</Link>
-          </li>
-        </ul>
-
-        <div className="flex items-center space-x-4 mt-4 md:mt-0">
-          {/* Search bar */}
-          <input
-            type="text"
-            placeholder="Search..."
-            className="p-2 rounded text-black"
-          />
-
-          {/* Conditionally render buttons based on login status */}
-          {!isLoggedIn ? (
-            <>
-              <Link to="/login">
-                <button className="bg-white text-purple-800 p-2 rounded hover:bg-gray-200">
-                  Login
-                </button>
-              </Link>
-              <Link to="/signup">
-                <button className="bg-white text-purple-800 p-2 rounded hover:bg-gray-200">
-                  Signup
-                </button>
-              </Link>
-            </>
-          ) : (
-            <button
-              onClick={logout}
-              className="bg-white text-red-800 p-2 rounded hover:bg-gray-200"
-            >
-              Sign Out
-            </button>
-          )}
-        </div>
-      </nav>
-
       {/* Main Content Section */}
       <div className="flex flex-col md:flex-row">
         {/* Image Section */}
@@ -119,7 +62,6 @@ export const Landing = () => {
               <Link to="/about" className="hover:underline transition-all duration-200">About</Link>
               <Link to="/working" className="hover:underline transition-all duration-200">How it Works</Link>
               <Link to="/contact" className="hover:underline transition-all duration-200">Contact Us</Link>
-              {/* Add the new Candidates link here */}
               <Link to="/candidates" className="hover:underline transition-all duration-200">Candidates</Link>
             </div>
           </div>

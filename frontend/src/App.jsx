@@ -1,3 +1,5 @@
+// src/App.js
+
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Landing from "./Components/Landing";
@@ -6,12 +8,15 @@ import Signup from "./Components/Signup";
 import Login from "./Components/Login";
 import Working from "./Components/Working";
 import Contact from "./Components/Contact";
+import Navbar from "./Components/Navbar"; // Import Navbar
 import { AuthProvider } from "./AuthContext";
 import CandidateInfo from "./Components/CandidateInfo";
+
 const App = () => {
   return (
     <AuthProvider>
       <Router>
+        <Navbar /> {/* Add the Navbar here */}
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/about" element={<About />} />
