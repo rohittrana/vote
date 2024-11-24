@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // Assuming you're using react-router for navigation
+import { useNavigate } from 'react-router-dom';
 import '../Components/style.css';
 
 export const Signup = () => {
@@ -12,7 +12,6 @@ export const Signup = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const navigate = useNavigate();
 
-  // Animation variants for different elements
   const containerVariants = {
     hidden: { opacity: 0, x: '-100vw' },
     visible: {
@@ -31,7 +30,7 @@ export const Signup = () => {
     hover: {
       scale: 1.1,
       textShadow: '0px 0px 8px rgba(255,255,255,0.8)',
-      boxShadow: '0px 0px 8px rgba(255,255,255,0.8)',
+      boxShadow: '0px 0px 8px rgba(0,0,0,0.2)',
       transition: {
         duration: 0.3,
         yoyo: Infinity,
@@ -47,7 +46,7 @@ export const Signup = () => {
       const response = await axios.post('http://localhost:5000/api/auth/signup', { name, email, password });
       setSuccessMessage('Signup successful! Redirecting to login...');
       setTimeout(() => {
-        navigate('/login'); // Redirect to login page after 2 seconds
+        navigate('/login');
       }, 2000);
     } catch (err) {
       console.error("Signup Error:", err.response ? err.response.data : err.message);
@@ -56,71 +55,83 @@ export const Signup = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-purple-600 via-pink-500 to-red-500">
+    <div className="flex flex-col md:flex-row min-h-screen bg-gradient-to-r from-blue-900 via-teal-800 to-gray-900 text-gray-100">
+      {/* Left Side (Form) */}
       <motion.div
-        className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg"
+        className="flex-1 flex items-center justify-center p-8"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
         exit="exit"
       >
-        <motion.h2
-          className="text-3xl font-semibold text-center mb-6"
-          initial={{ y: -250 }}
-          animate={{ y: -10 }}
-          transition={{ delay: 0.2, type: 'spring', stiffness: 120 }}
-        >
-          Sign Up
-        </motion.h2>
-        {errorMessage && <div className="text-red-500 mb-4">{errorMessage}</div>}
-        {successMessage && <div className="text-green-500 mb-4">{successMessage}</div>}
-        <form onSubmit={handleSignup}>
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
-            <input
-              id="name"
-              type="text"
-              placeholder="Enter your name"
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-            <input
-              id="email"
-              type="email"
-              placeholder="Enter your email"
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
-            <input
-              id="password"
-              type="password"
-              placeholder="Enter your password"
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          <motion.button
-            type="submit"
-            className="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-200"
-            variants={buttonVariants}
-            whileHover="hover"
+        <div className="w-full max-w-md p-8 bg-gray-800 rounded-lg shadow-lg">
+          <motion.h2
+            className="text-3xl font-semibold text-center mb-6 text-teal-400"
+            initial={{ y: -250 }}
+            animate={{ y: -10 }}
+            transition={{ delay: 0.2, type: 'spring', stiffness: 120 }}
           >
             Sign Up
-          </motion.button>
-        </form>
+          </motion.h2>
+          {errorMessage && <div className="text-red-400 mb-4">{errorMessage}</div>}
+          {successMessage && <div className="text-green-400 mb-4">{successMessage}</div>}
+          <form onSubmit={handleSignup}>
+            <div className="mb-4">
+              <label htmlFor="name" className="block text-sm font-medium">Name</label>
+              <input
+                id="name"
+                type="text"
+                placeholder="Enter your name"
+                className="mt-1 block w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-400"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="email" className="block text-sm font-medium">Email</label>
+              <input
+                id="email"
+                type="email"
+                placeholder="Enter your email"
+                className="mt-1 block w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-400"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="password" className="block text-sm font-medium">Password</label>
+              <input
+                id="password"
+                type="password"
+                placeholder="Enter your password"
+                className="mt-1 block w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-400"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <motion.button
+              type="submit"
+              className="w-full bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600 transition-colors duration-200"
+              variants={buttonVariants}
+              whileHover="hover"
+            >
+              Sign Up
+            </motion.button>
+          </form>
+        </div>
       </motion.div>
+
+      {/* Right Side (Image) */}
+      <div className="flex-1 flex items-center justify-center p-8">
+        <img
+          src="/Images/votesignup.jpg"
+          alt="Signup Illustration"
+          className="max-w-full h-auto rounded-lg shadow-lg mr-8" // Added margin-right
+        />
+      </div>
     </div>
   );
 };
