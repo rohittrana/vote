@@ -12,12 +12,12 @@ export const Landing = () => {
           <img
             src="./Images/vote.jpg"
             alt="Voting Image"
-            className="object-cover w-full h-full rounded-lg shadow-lg"
+            className="object-cover w-full h-full  shadow-lg"
           />
         </div>
 
         {/* Content Section */}
-        <div className="md:w-1/2 w-full flex flex-col justify-center p-8 bg-gray-100">
+        <div className="md:w-1/2 w-full flex flex-col justify-center p-8 bg-gray-200">
           <h1 className="text-4xl font-bold mb-4">Make Your Vote Count</h1>
           <p className="text-lg mb-4">
             Voting is the foundation of a democratic society. Every vote matters, and your voice deserves to be heard.
@@ -60,7 +60,7 @@ export const Landing = () => {
             <div className="flex flex-wrap space-x-4 mb-4 md:mb-0">
               <Link to="/" className="hover:underline transition-all duration-200">Home</Link>
               <Link to="/about" className="hover:underline transition-all duration-200">About</Link>
-              <Link to="/working" className="hover:underline transition-all duration-200">How it Works</Link>
+              <Link to="/working" className="hover:underline transition-all duration-200"> Working</Link>
               <Link to="/contact" className="hover:underline transition-all duration-200">Contact Us</Link>
               <Link to="/candidates" className="hover:underline transition-all duration-200">Candidates</Link>
             </div>
