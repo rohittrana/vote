@@ -7,7 +7,7 @@ export const Working = () => {
   return (
     <div>
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white py-20 px-8 text-center">
+      <div className="bg-gradient-to-r from-gray-300 via-gray-200 to-gray-100 text-gray-800 py-20 px-8 text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-4">How It Works</h1>
         <p className="text-lg md:text-2xl max-w-2xl mx-auto">
           Learn about the process behind our voting platform and how it ensures security and transparency in every vote.
@@ -47,7 +47,7 @@ export const Working = () => {
       </section>
 
       {/* Security and Transparency Section */}
-      <section className="py-12 px-8 bg-gray-100 text-gray-800">
+      <section className="py-12 px-8 bg-gray-200 text-gray-800">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Security and Transparency</h2>
           <p className="text-lg md:text-xl mb-6 text-center max-w-3xl mx-auto">
@@ -57,12 +57,12 @@ export const Working = () => {
       </section>
 
       {/* Contact Call to Action */}
-      <section className="py-12 px-8 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 text-white text-center">
+      <section className="py-12 px-8 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-100 text-gray-800 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">Have Questions?</h2>
         <p className="text-lg md:text-xl mb-6 max-w-2xl mx-auto">
           If you have any questions or concerns about our voting process, don't hesitate to reach out to us.
         </p>
-        <a href="#Contact" className="bg-white text-purple-800 p-3 rounded-lg hover:bg-gray-200 inline-block">
+        <a href="#Contact" className="bg-gray-700 text-white p-3 rounded-lg hover:bg-gray-600 inline-block">
           Contact Us
         </a>
       </section>
@@ -82,10 +82,10 @@ export const Working = () => {
 
           {/* Social Media Icons */}
           <div className="flex space-x-4">
-            <a href="#" className="text-white hover:text-blue-500 transition-colors duration-300"><FaFacebookF /></a>
-            <a href="#" className="text-white hover:text-blue-400 transition-colors duration-300"><FaTwitter /></a>
-            <a href="#" className="text-white hover:text-pink-500 transition-colors duration-300"><FaInstagram /></a>
-            <a href="#" className="text-white hover:text-blue-600 transition-colors duration-300"><FaLinkedinIn /></a>
+            <a href="#" className="text-white hover:text-gray-500 transition-colors duration-300"><FaFacebookF /></a>
+            <a href="#" className="text-white hover:text-gray-500 transition-colors duration-300"><FaTwitter /></a>
+            <a href="#" className="text-white hover:text-gray-500 transition-colors duration-300"><FaInstagram /></a>
+            <a href="#" className="text-white hover:text-gray-500 transition-colors duration-300"><FaLinkedinIn /></a>
           </div>
         </div>
       </footer>
