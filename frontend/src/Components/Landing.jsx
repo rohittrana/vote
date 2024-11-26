@@ -121,7 +121,7 @@ export const Landing = () => {
                 About
               </Link>
               <Link to="/working" className="hover:underline transition-all duration-200">
-                How It Works
+                Working
               </Link>
               <Link to="/contact" className="hover:underline transition-all duration-200">
                 Contact
