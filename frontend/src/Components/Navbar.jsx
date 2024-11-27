@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../AuthContext";
 
 const Navbar = () => {
   const { isLoggedIn, logout } = useAuth();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <nav
@@ -18,8 +19,42 @@ const Navbar = () => {
           <Link to="/">VOTEHUB</Link>
         </div>
 
+        {/* Hamburger Menu Button */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden text-gray-700 focus:outline-none"
+        >
+          <svg
+            className="w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            {isMenuOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            )}
+          </svg>
+        </button>
+
         {/* Navigation Links */}
-        <ul className="hidden md:flex space-x-8">
+        <ul
+          className={`${
+            isMenuOpen ? "block" : "hidden"
+          } md:flex md:space-x-8 md:items-center w-full md:w-auto space-y-4 md:space-y-0`}
+        >
           <li className="text-gray-700 font-medium hover:text-black transition duration-300">
             <Link to="/">Home</Link>
           </li>
@@ -38,7 +73,11 @@ const Navbar = () => {
         </ul>
 
         {/* Buttons */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div
+          className={`${
+            isMenuOpen ? "block" : "hidden"
+          } md:flex items-center space-y-4 md:space-y-0 md:space-x-4`}
+        >
           {!isLoggedIn ? (
             <>
               <Link to="/login">

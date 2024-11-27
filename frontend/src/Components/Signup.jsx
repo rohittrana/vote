@@ -1,36 +1,36 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import '../Components/style.css';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import "../Components/style.css";
 
 export const Signup = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   const containerVariants = {
-    hidden: { opacity: 0, x: '-100vw' },
+    hidden: { opacity: 0, x: "-100vw" },
     visible: {
       opacity: 1,
       x: 0,
-      transition: { type: 'spring', stiffness: 120, delay: 0.2 },
+      transition: { type: "spring", stiffness: 120, delay: 0.2 },
     },
     exit: {
       opacity: 0,
-      x: '100vw',
-      transition: { ease: 'easeInOut' },
+      x: "100vw",
+      transition: { ease: "easeInOut" },
     },
   };
 
   const buttonVariants = {
     hover: {
       scale: 1.1,
-      textShadow: '0px 0px 8px rgba(255,255,255,0.8)',
-      boxShadow: '0px 0px 8px rgba(0,0,0,0.2)',
+      textShadow: "0px 0px 8px rgba(255,255,255,0.8)",
+      boxShadow: "0px 0px 8px rgba(0,0,0,0.2)",
       transition: {
         duration: 0.3,
         yoyo: Infinity,
@@ -40,22 +40,24 @@ export const Signup = () => {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    setErrorMessage('');
-    setSuccessMessage('');
+    setErrorMessage("");
+    setLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/signup', { name, email, password });
-      setSuccessMessage('Signup successful! Redirecting to login...');
-      setTimeout(() => {
-        navigate('/login');
-      }, 2000);
+      await axios.post("http://localhost:5000/api/auth/signup", {
+        name,
+        email,
+        password,
+      });
+      navigate("/login"); // Redirect immediately after successful signup
     } catch (err) {
-      console.error("Signup Error:", err.response ? err.response.data : err.message);
-      setErrorMessage(err.response?.data?.message || 'Signup failed! Please try again.');
+      setErrorMessage(err.response?.data?.message || "Signup failed! Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div className="flex flex-col md:flex-row min-h-screen bg-gradient-to-r from-purple-700 via-indigo-600 to-pink-800 text-white">
+    <div className="flex flex-col md:flex-row min-h-screen bg-gradient-to-r from-gray-500 via-gray-400 to-gray-300 text-gray-900">
       {/* Left Side (Form) */}
       <motion.div
         className="flex-1 flex items-center justify-center p-8"
@@ -64,49 +66,54 @@ export const Signup = () => {
         animate="visible"
         exit="exit"
       >
-        <div className="w-full max-w-md p-8 bg-purple-900 rounded-lg shadow-lg">
+        <div className="w-full max-w-md p-8 bg-gradient-to-b from-gray-600 to-gray-500 rounded-lg shadow-lg">
           <motion.h2
-            className="text-3xl font-semibold text-center mb-6 text-pink-400"
+            className="text-3xl font-semibold text-center mb-6 text-gray-100"
             initial={{ y: -250 }}
             animate={{ y: -10 }}
-            transition={{ delay: 0.2, type: 'spring', stiffness: 120 }}
+            transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
           >
             Sign Up
           </motion.h2>
-          {errorMessage && <div className="text-red-400 mb-4">{errorMessage}</div>}
-          {successMessage && <div className="text-green-400 mb-4">{successMessage}</div>}
+          {errorMessage && <div className="text-red-500 mb-4">{errorMessage}</div>}
           <form onSubmit={handleSignup}>
             <div className="mb-4">
-              <label htmlFor="name" className="block text-sm font-medium">Name</label>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-200">
+                Name
+              </label>
               <input
                 id="name"
                 type="text"
                 placeholder="Enter your name"
-                className="mt-1 block w-full p-2 bg-purple-800 border border-purple-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-pink-400"
+                className="mt-1 block w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="email" className="block text-sm font-medium">Email</label>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-200">
+                Email
+              </label>
               <input
                 id="email"
                 type="email"
                 placeholder="Enter your email"
-                className="mt-1 block w-full p-2 bg-purple-800 border border-purple-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-pink-400"
+                className="mt-1 block w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="password" className="block text-sm font-medium">Password</label>
+              <label htmlFor="password" className="block text-sm font-medium text-gray-200">
+                Password
+              </label>
               <input
                 id="password"
                 type="password"
                 placeholder="Enter your password"
-                className="mt-1 block w-full p-2 bg-purple-800 border border-purple-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-pink-400"
+                className="mt-1 block w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -114,11 +121,12 @@ export const Signup = () => {
             </div>
             <motion.button
               type="submit"
-              className="w-full bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700 transition-colors duration-200"
+              className="w-full py-3 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors duration-200"
               variants={buttonVariants}
               whileHover="hover"
+              disabled={loading}
             >
-              Sign Up
+              {loading ? "Signing Up..." : "Sign Up"}
             </motion.button>
           </form>
         </div>
@@ -133,9 +141,9 @@ export const Signup = () => {
         exit="exit"
       >
         <motion.img
-          src="/Images/votesignup.jpg"
+          src="./Images/votelogin.jpg"
           alt="Signup Illustration"
-          className="max-w-full h-auto rounded-lg shadow-lg mr-8 transform hover:scale-105 transition-all duration-300"
+          className="max-w-full h-auto rounded-lg shadow-lg object-cover transform hover:scale-105 transition-all duration-300"
         />
       </motion.div>
     </div>

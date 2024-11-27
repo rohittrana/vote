@@ -25,11 +25,13 @@ const containerVariants = {
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const response = await axios.post("http://localhost:5000/api/auth/login", {
         email,
@@ -37,20 +39,12 @@ export const Login = () => {
       });
 
       login(response.data.token);
-
-      toast.success("Login successful! Redirecting...", {
-        position: "top-right",
-        autoClose: 3000,
-      });
-
-      setTimeout(() => {
-        navigate("/landing");
-      }, 3000);
+      toast.success("Login successful! Redirecting...");
+      navigate("/landing");
     } catch (err) {
-      toast.error("Login failed. Please check your credentials.", {
-        position: "top-right",
-        autoClose: 3000,
-      });
+      toast.error("Login failed. Please check your credentials.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -110,7 +104,7 @@ export const Login = () => {
               type="submit"
               className="w-full py-3 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors duration-200"
             >
-              Login
+              {loading ? "Logging in..." : "Login"}
             </button>
           </form>
           <ToastContainer />

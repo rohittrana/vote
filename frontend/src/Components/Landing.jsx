@@ -1,6 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa";
 import "./landing.css"; // Import the custom CSS file
 
 export const Landing = () => {
@@ -15,11 +20,8 @@ export const Landing = () => {
             <img
               src="./Images/vote.jpg"
               alt="Voting"
-              className="rounded-lg shadow-md mb-4"
+              className="rounded-lg shadow-md w-full h-auto"
             />
-
-
-
           </div>
 
           {/* Content */}
@@ -28,11 +30,13 @@ export const Landing = () => {
               Make Your Vote <span className="text-yellow-400">Count</span>
             </h1>
             <p className="text-lg mb-6 animate-fade-in-up">
-              Your vote is your voice. Participate in shaping the future with secure and accessible digital voting platforms.
+              Your vote is your voice. Participate in shaping the future with
+              secure and accessible digital voting platforms.
             </p>
+
             <a
               href="#additional-info"
-              className="px-6 py-3 bg-yellow-500 text-white font-semibold rounded-md shadow-md hover:bg-yellow-600 transition duration-300 animate-fade-in-up"
+              className="px-6 py-3 bg-yellow-500 text-white font-semibold rounded-md shadow-md hover:bg-yellow-600 hover:scale-105 transition duration-300"
             >
               Learn More
             </a>
@@ -41,7 +45,10 @@ export const Landing = () => {
       </div>
 
       {/* Additional Information Section */}
-      <section id="additional-info" className="additional-info-section py-12 px-4 md:px-8 bg-white text-gray-800">
+      <section
+        id="additional-info"
+        className="additional-info-section py-12 px-4 md:px-8 bg-white text-gray-800"
+      >
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center animate-fade-in-down">
             Why Voting Matters
@@ -56,7 +63,9 @@ export const Landing = () => {
               />
               <h3 className="text-2xl font-semibold mb-2">Empower Democracy</h3>
               <p>
-                Voting empowers individuals to influence policies and leadership. It's a fundamental right that ensures representation and accountability in governance.
+                Voting empowers individuals to influence policies and
+                leadership. It's a fundamental right that ensures representation
+                and accountability in governance.
               </p>
             </div>
 
@@ -67,9 +76,13 @@ export const Landing = () => {
                 alt="Participate"
                 className="rounded-lg shadow-md mb-4 w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
               />
-              <h3 className="text-2xl font-semibold mb-2">Increase Participation</h3>
+              <h3 className="text-2xl font-semibold mb-2">
+                Increase Participation
+              </h3>
               <p>
-                Digital voting platforms make it easier for everyone to participate in elections, reducing barriers and encouraging higher voter turnout.
+                Digital voting platforms make it easier for everyone to
+                participate in elections, reducing barriers and encouraging
+                higher voter turnout.
               </p>
             </div>
           </div>
@@ -87,21 +100,24 @@ export const Landing = () => {
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 animate-fade-in-up">
               <h3 className="text-xl font-semibold mb-4">Convenience</h3>
               <p>
-                Cast your vote from anywhere, anytime, making participation effortless and accessible.
+                Cast your vote from anywhere, anytime, making participation
+                effortless and accessible.
               </p>
             </div>
             {/* Benefit 2 */}
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 animate-fade-in-up">
               <h3 className="text-xl font-semibold mb-4">Security</h3>
               <p>
-                Advanced encryption and blockchain technology ensure your vote is secure and tamper-proof.
+                Advanced encryption and blockchain technology ensure your vote
+                is secure and tamper-proof.
               </p>
             </div>
             {/* Benefit 3 */}
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 animate-fade-in-up">
               <h3 className="text-xl font-semibold mb-4">Transparency</h3>
               <p>
-                All voting data is publicly verifiable, ensuring transparency and trust in the electoral process.
+                All voting data is publicly verifiable, ensuring transparency
+                and trust in the electoral process.
               </p>
             </div>
           </div>
@@ -114,19 +130,34 @@ export const Landing = () => {
           {/* Quick Links */}
           <div className="flex flex-col md:flex-row mb-6 md:mb-0">
             <div className="flex flex-wrap space-x-4 mb-4 md:mb-0">
-              <Link to="/" className="hover:underline transition-all duration-200">
+              <Link
+                to="/"
+                className="hover:underline transition-all duration-200"
+              >
                 Home
               </Link>
-              <Link to="/about" className="hover:underline transition-all duration-200">
+              <Link
+                to="/about"
+                className="hover:underline transition-all duration-200"
+              >
                 About
               </Link>
-              <Link to="/working" className="hover:underline transition-all duration-200">
+              <Link
+                to="/working"
+                className="hover:underline transition-all duration-200"
+              >
                 Working
               </Link>
-              <Link to="/contact" className="hover:underline transition-all duration-200">
+              <Link
+                to="/contact"
+                className="hover:underline transition-all duration-200"
+              >
                 Contact
               </Link>
-              <Link to="/candidates" className="hover:underline transition-all duration-200">
+              <Link
+                to="/candidates"
+                className="hover:underline transition-all duration-200"
+              >
                 Candidates
               </Link>
             </div>
@@ -165,7 +196,9 @@ export const Landing = () => {
           </div>
         </div>
         {/* Copyright */}
-        <p className="text-center mt-4">&copy; {new Date().getFullYear()} SecureVote. All Rights Reserved.</p>
+        <p className="text-center mt-4">
+          &copy; {new Date().getFullYear()} SecureVote. All Rights Reserved.
+        </p>
       </footer>
     </div>
   );

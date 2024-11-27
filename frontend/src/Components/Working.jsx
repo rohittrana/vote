@@ -160,6 +160,12 @@ export const Working = () => {
               >
                 Contact
               </Link>
+              <Link
+                to="/candidates"
+                className="hover:underline transition-all duration-200"
+              >
+                Candidates
+              </Link>
             </div>
           </div>
           <div className="flex space-x-4">
