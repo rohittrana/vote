@@ -69,9 +69,8 @@ export const Working = () => {
               after the election.
             </p>
           </div>
-          {/* New Features */}
+          {/* Features */}
           <div className="flex flex-col md:flex-row justify-around items-center gap-6">
-            {/* Feature 1: Stats Counter */}
             <div className="text-center animate-slide-in-left">
               <h3 className="text-4xl font-bold text-blue-600">500,000+</h3>
               <p className="text-lg mt-2">Votes Secured</p>
@@ -94,7 +93,6 @@ export const Working = () => {
           Have Questions?
         </h2>
         <div className="max-w-3xl mx-auto animate-fade-in-up">
-          {/* FAQ Accordion */}
           <div className="space-y-4">
             <details className="bg-white border rounded-lg p-4">
               <summary className="cursor-pointer text-lg font-semibold text-gray-800">
@@ -122,13 +120,11 @@ export const Working = () => {
             </details>
           </div>
         </div>
-        {/* Enhanced Call-to-Action Button */}
-        <a
-          href="#Contact"
-          className="mt-6 inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 hover:shadow-lg transition-transform"
-        >
-          Contact Us
-        </a>
+        <Link to="/contact">
+          <button className="mt-6 inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 hover:shadow-lg transition-transform">
+            Contact Us
+          </button>
+        </Link>
       </section>
 
       {/* Footer Section */}
@@ -136,68 +132,39 @@ export const Working = () => {
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-start">
           <div className="flex flex-col md:flex-row mb-6 md:mb-0">
             <div className="flex flex-wrap space-x-4 mb-4 md:mb-0">
-              <Link
-                to="/"
-                className="hover:underline transition-all duration-200 animate-fade-in-left"
-              >
+              <Link to="/" className="hover:underline transition-all duration-200">
                 Home
               </Link>
-              <Link
-                to="/about"
-                className="hover:underline transition-all duration-200 animate-fade-in-left"
-              >
+              <Link to="/about" className="hover:underline transition-all duration-200">
                 About
               </Link>
-              <Link
-                to="/working"
-                className="hover:underline transition-all duration-200 animate-fade-in-left"
-              >
+              <Link to="/working" className="hover:underline transition-all duration-200">
                 Working
               </Link>
-              <Link
-                to="/contact"
-                className="hover:underline transition-all duration-200 animate-fade-in-left"
-              >
+              <Link to="/contact" className="hover:underline transition-all duration-200">
                 Contact
               </Link>
-              <Link
-                to="/candidates"
-                className="hover:underline transition-all duration-200"
-              >
+              <Link to="/candidates" className="hover:underline transition-all duration-200">
                 Candidates
               </Link>
             </div>
           </div>
           <div className="flex space-x-4">
-            <a
-              href="#"
-              className="hover:text-blue-500 transition-colors duration-200 animate-slide-in-up"
-            >
+            <a href="#" className="hover:text-blue-500 transition-colors duration-200">
               <FaFacebookF />
             </a>
-            <a
-              href="#"
-              className="hover:text-blue-400 transition-colors duration-200 animate-slide-in-up"
-            >
+            <a href="#" className="hover:text-blue-400 transition-colors duration-200">
               <FaTwitter />
             </a>
-            <a
-              href="#"
-              className="hover:text-pink-500 transition-colors duration-200 animate-slide-in-up"
-            >
+            <a href="#" className="hover:text-pink-500 transition-colors duration-200">
               <FaInstagram />
             </a>
-            <a
-              href="#"
-              className="hover:text-blue-700 transition-colors duration-200 animate-slide-in-up"
-            >
+            <a href="#" className="hover:text-blue-700 transition-colors duration-200">
               <FaLinkedinIn />
             </a>
           </div>
         </div>
-        <p className="text-center mt-4 animate-fade-in-up">
-          &copy; 2024 SecureVote. All Rights Reserved.
-        </p>
+        <p className="text-center mt-4">&copy; 2024 SecureVote. All Rights Reserved.</p>
       </footer>
     </div>
   );

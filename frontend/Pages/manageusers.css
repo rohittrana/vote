@@ -1,0 +1,116 @@
+/* General Styles */
+body {
+               font-family: 'Roboto', sans-serif;
+             }
+             
+             .header {
+               background-color: #2563eb;
+               color: white;
+               text-align: center;
+               padding: 1.5rem;
+             }
+             
+             .header h1 {
+               margin: 0;
+               font-size: 2rem;
+             }
+             
+             .header p {
+               margin-top: 0.5rem;
+               font-size: 1rem;
+             }
+             
+             .main {
+               padding: 2rem 1rem;
+               background-color: #f3f4f6;
+             }
+             
+             .search-bar {
+               text-align: center;
+               margin-bottom: 1.5rem;
+             }
+             
+             .search-input {
+               width: 100%;
+               max-width: 400px;
+               padding: 0.75rem;
+               border: 1px solid #ccc;
+               border-radius: 0.5rem;
+               font-size: 1rem;
+             }
+             
+             /* User Table */
+             .user-table {
+               width: 100%;
+               border-collapse: collapse;
+               margin: 0 auto;
+             }
+             
+             .user-table th,
+             .user-table td {
+               padding: 0.75rem 1rem;
+               border: 1px solid #ddd;
+               text-align: left;
+             }
+             
+             .user-table th {
+               background-color: #f9fafb;
+               font-weight: bold;
+             }
+             
+             .user-table tbody tr:nth-child(even) {
+               background-color: #f3f4f6;
+             }
+             
+             /* Status Badges */
+             .status {
+               padding: 0.25rem 0.5rem;
+               border-radius: 0.25rem;
+               font-size: 0.875rem;
+               font-weight: bold;
+             }
+             
+             .status-active {
+               background-color: #10b981;
+               color: white;
+             }
+             
+             .status-suspended {
+               background-color: #f59e0b;
+               color: white;
+             }
+             
+             .status-removed {
+               background-color: #ef4444;
+               color: white;
+             }
+             
+             /* Action Buttons */
+             button {
+               padding: 0.5rem 1rem;
+               border: none;
+               border-radius: 0.5rem;
+               cursor: pointer;
+               font-size: 0.875rem;
+               margin-right: 0.5rem;
+             }
+             
+             .btn-approve {
+               background-color: #10b981;
+               color: white;
+             }
+             
+             .btn-suspend {
+               background-color: #f59e0b;
+               color: white;
+             }
+             
+             .btn-remove {
+               background-color: #ef4444;
+               color: white;
+             }
+             
+             button:hover {
+               opacity: 0.9;
+             }
+             

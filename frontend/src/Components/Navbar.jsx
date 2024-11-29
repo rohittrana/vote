@@ -55,20 +55,45 @@ const Navbar = () => {
             isMenuOpen ? "block" : "hidden"
           } md:flex md:space-x-8 md:items-center w-full md:w-auto space-y-4 md:space-y-0`}
         >
-          <li className="text-gray-700 font-medium hover:text-black transition duration-300">
-            <Link to="/">Home</Link>
+          <li>
+            <Link
+              to="/"
+              className="text-gray-700 font-medium hover:text-black hover:underline transition duration-300"
+            >
+              Home
+            </Link>
           </li>
-          <li className="text-gray-700 font-medium hover:text-black transition duration-300">
-            <Link to="/about">About</Link>
+          <li>
+            <Link
+              to="/about"
+              className="text-gray-700 font-medium hover:text-black hover:underline transition duration-300"
+            >
+              About
+            </Link>
           </li>
-          <li className="text-gray-700 font-medium hover:text-black transition duration-300">
-            <Link to="/working">Working</Link>
+          <li>
+            <Link
+              to="/working"
+              className="text-gray-700 font-medium hover:text-black hover:underline transition duration-300"
+            >
+              Working
+            </Link>
           </li>
-          <li className="text-gray-700 font-medium hover:text-black transition duration-300">
-            <Link to="/contact">Contact</Link>
+          <li>
+            <Link
+              to="/contact"
+              className="text-gray-700 font-medium hover:text-black hover:underline transition duration-300"
+            >
+              Contact
+            </Link>
           </li>
-          <li className="text-gray-700 font-medium hover:text-black transition duration-300">
-            <Link to="/candidates">Candidates</Link>
+          <li>
+            <Link
+              to="/candidates"
+              className="text-gray-700 font-medium hover:text-black hover:underline transition duration-300"
+            >
+              Candidates
+            </Link>
           </li>
         </ul>
 
