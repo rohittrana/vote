@@ -10,10 +10,11 @@ import Navbar from "./Components/Navbar";
 import { AuthProvider } from "./AuthContext";
 import CandidateInfo from "./Components/CandidateInfo";
 import Admin from '../Pages/Admin'; // Adjust path if necessary
-
+import Votes from '../Pages/Votes'
 const App = () => {
   return (
     <AuthProvider>
+    
       <Router>
         <Navbar /> {/* Navbar stays here to be visible on all pages */}
         <Routes>

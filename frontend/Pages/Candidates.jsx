@@ -3,9 +3,9 @@ import "./admin.css"; // Add specific styling if needed.
 
 const Candidates = () => {
   const candidates = [
-    { id: 1, name: "John Doe", position: "President", status: "Approved" },
-    { id: 2, name: "Jane Smith", position: "Vice President", status: "Pending" },
-    { id: 3, name: "Sam Wilson", position: "Treasurer", status: "Rejected" },
+    { id: 1, name: "rohit rana", position: "President", status: "Approved" },
+    { id: 2, name: "kirti jirati", position: "Vice President", status: "Pending" },
+    { id: 3, name: "Nishchay ", position: "Treasurer", status: "Rejected" },
   ];
 
   return (

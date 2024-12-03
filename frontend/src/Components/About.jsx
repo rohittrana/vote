@@ -91,7 +91,7 @@ const About = () => {
                   alt="Team Member"
                   className="rounded-full w-32 h-32 mx-auto object-cover mb-4"
                 />
-                <h4 className="text-xl font-bold mb-2">Ayush Sharma</h4>
+                <h4 className="text-xl font-bold mb-2">nishchay </h4>
                 <p className="text-gray-700">Blockchain Enthusiast</p>
                 <p className="text-gray-600 mt-2">
                   Exploring innovative blockchain technologies to ensure transparency in digital voting.
@@ -107,7 +107,7 @@ const About = () => {
                   alt="Team Member"
                   className="rounded-full w-32 h-32 mx-auto object-cover mb-4"
                 />
-                <h4 className="text-xl font-bold mb-2">Pookie Baba </h4>
+                <h4 className="text-xl font-bold mb-2">Mayank  </h4>
                 <p className="text-gray-700">UI/UX Designer</p>
                 <p className="text-gray-600 mt-2">
                   Designs intuitive user flows and engaging visuals for the platform.

@@ -4,8 +4,8 @@ import "../pages/manageusers.css";
 
 const ManageCandidates = () => {
   const [candidates, setCandidates] = useState([
-    { id: 1, name: "Alice Green", position: "President", status: "Active" },
-    { id: 2, name: "Bob Brown", position: "Secretary", status: "Inactive" },
+    { id: 1, name: "Rohit Rana", position: "President", status: "Active" },
+    { id: 2, name: "Kiriti jirati", position: "Secretary", status: "Inactive" },
   ]);
 
   const handleStatusChange = (id, newStatus) => {

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import '../Components/contact.css';
 
@@ -23,7 +22,11 @@ const Contact = () => {
             Get in Touch
           </h2>
           <div className="max-w-xl mx-auto">
-            <form className="space-y-6">
+            <form
+              action="https://formspree.io/f/xnnqlyro"
+              method="POST"
+              className="space-y-6"
+            >
               <div>
                 <label htmlFor="name" className="block text-lg font-semibold mb-2">
                   Your Name
@@ -31,6 +34,7 @@ const Contact = () => {
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:ring-2"
                   placeholder="Enter your name"
                   required
@@ -43,6 +47,7 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:ring-2"
                   placeholder="Enter your email"
                   required
@@ -54,6 +59,7 @@ const Contact = () => {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:ring-2"
                   placeholder="Write your message"
                   rows="5"
@@ -108,36 +114,36 @@ const Contact = () => {
       <footer className="bg-gray-900 text-white py-6">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
           <div className="flex space-x-6 mb-4 md:mb-0">
-            <Link
-              to="/"
+            <a
+              href="#"
               className="hover:underline hover:text-blue-400 transition-all duration-200"
             >
               Home
-            </Link>
-            <Link
-              to="/about"
+            </a>
+            <a
+              href="#"
               className="hover:underline hover:text-blue-400 transition-all duration-200"
             >
               About
-            </Link>
-            <Link
-              to="/working"
+            </a>
+            <a
+              href="#"
               className="hover:underline hover:text-blue-400 transition-all duration-200"
             >
               Working
-            </Link>
-            <Link
-              to="/contact"
+            </a>
+            <a
+              href="#"
               className="hover:underline hover:text-blue-400 transition-all duration-200"
             >
               Contact
-            </Link>
-            <Link
-              to="/candidates"
+            </a>
+            <a
+              href="#"
               className="hover:underline hover:text-blue-400 transition-all duration-200"
             >
               Candidates
-            </Link>
+            </a>
           </div>
           <div className="flex space-x-4">
             <a

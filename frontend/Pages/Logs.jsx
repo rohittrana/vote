@@ -3,9 +3,9 @@ import "./admin.css"; // Add specific styling if needed.
 
 const Logs = () => {
   const logs = [
-    { id: 1, action: "User Login", user: "Alice Johnson", timestamp: "2024-11-28 10:23:45" },
-    { id: 2, action: "Vote Cast", user: "Bob Smith", timestamp: "2024-11-28 11:15:32" },
-    { id: 3, action: "Settings Updated", user: "Admin", timestamp: "2024-11-28 12:00:00" },
+    { id: 1, action: "User Login", user: "yash dubey", timestamp: "2024-11-28 10:23:45" },
+    { id: 2, action: "Vote Cast", user: "Mayank", timestamp: "2024-11-28 11:15:32" },
+    { id: 3, action: "Settings Updated", user: "Rohit", timestamp: "2024-11-28 12:00:00" },
   ];
 
   return (
