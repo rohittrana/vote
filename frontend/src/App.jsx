@@ -9,7 +9,7 @@ import Contact from "./Components/Contact";
 import Navbar from "./Components/Navbar"; 
 import { AuthProvider } from "./AuthContext";
 import CandidateInfo from "./Components/CandidateInfo";
-import Admin from '../Pages/Admin'; // Adjust path if necessary
+import Admin from '../Pages/Admin'; 
 import Votes from '../Pages/Votes'
 const App = () => {
   return (
