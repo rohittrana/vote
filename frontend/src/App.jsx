@@ -6,18 +6,28 @@ import Signup from "./Components/Signup";
 import Login from "./Components/Login";
 import Working from "./Components/Working";
 import Contact from "./Components/Contact";
-import Navbar from "./Components/Navbar"; 
+import Navbar from "./Components/Navbar";
 import { AuthProvider } from "./AuthContext";
 import CandidateInfo from "./Components/CandidateInfo";
-import Admin from '../Pages/Admin'; 
-import Votes from '../Pages/Votes'
+
+// Admin Pages
+import Admin from "./Pages/Admin";
+// import ManageCandidates from "./Pages/ManageCandidates";
+import Analytics from "./Pages/Analytics";
+import Candidates from "./Pages/Candidates";
+import Logs from "./Pages/Logs";
+import Settings from "./Pages/Settings";
+import UserManagement from "./Pages/UserManagement";
+import Users from "./Pages/Users";
+import Votes from "./Pages/Votes";
+
 const App = () => {
   return (
     <AuthProvider>
-    
       <Router>
-        <Navbar /> {/* Navbar stays here to be visible on all pages */}
+        <Navbar />
         <Routes>
+          {/* Public Routes */}
           <Route path="/" element={<Landing />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
@@ -25,8 +35,21 @@ const App = () => {
           <Route path="/working" element={<Working />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/candidates" element={<CandidateInfo />} />
-          <Route path="/admin/*" element={<Admin />} /> {/* Admin Routes */}
-          <Route path="*" element={<Landing />} /> {/* Catch-all route */}
+
+          {/* Admin Routes */}
+          <Route path="/admin" element={<Admin />}>
+            
+            <Route path="analytics" element={<Analytics />} />
+            <Route path="candidates" element={<Candidates />} />
+            <Route path="logs" element={<Logs />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="user-management" element={<UserManagement />} />
+            <Route path="users" element={<Users />} />
+            <Route path="votes" element={<Votes />} />
+          </Route>
+
+          {/* Catch-all Route */}
+          <Route path="*" element={<Landing />} />
         </Routes>
       </Router>
     </AuthProvider>
