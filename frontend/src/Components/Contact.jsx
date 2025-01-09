@@ -1,12 +1,10 @@
 import React from 'react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
-import '../Components/contact.css';
 
 const Contact = () => {
   return (
-    <div>
+    <div className="bg-orange-100">
       {/* Hero Section */}
-      <div className="bg-gray-200 text-gray-900 py-20 px-8 text-center animate-fadeIn">
+      <div className="bg-orange-100 text-gray-900 py-20 px-8 text-center animate-fadeIn">
         <h1 className="text-4xl md:text-6xl font-bold mb-4 hover:scale-110 transition-transform duration-300">
           Contact Us
         </h1>
@@ -16,7 +14,7 @@ const Contact = () => {
       </div>
 
       {/* Contact Form Section */}
-      <section className="py-12 px-8 bg-white text-gray-800">
+      <section className="py-12 px-8 bg-orange-100 text-gray-800">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center animate-fadeIn">
             Get in Touch
@@ -78,7 +76,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Details Section */}
-      <section className="py-12 px-8 bg-gray-100">
+      <section className="py-12 px-8 bg-orange-100">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center animate-fadeIn">
             Contact Information
@@ -92,7 +90,7 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-12 px-8">
+      <section className="py-12 px-8 bg-orange-100">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center animate-fadeIn">
             Locate Us
@@ -109,70 +107,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-
-      {/* Footer Section */}
-      <footer className="bg-gray-900 text-white py-6">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-          <div className="flex space-x-6 mb-4 md:mb-0">
-            <a
-              href="#"
-              className="hover:underline hover:text-blue-400 transition-all duration-200"
-            >
-              Home
-            </a>
-            <a
-              href="#"
-              className="hover:underline hover:text-blue-400 transition-all duration-200"
-            >
-              About
-            </a>
-            <a
-              href="#"
-              className="hover:underline hover:text-blue-400 transition-all duration-200"
-            >
-              Working
-            </a>
-            <a
-              href="#"
-              className="hover:underline hover:text-blue-400 transition-all duration-200"
-            >
-              Contact
-            </a>
-            <a
-              href="#"
-              className="hover:underline hover:text-blue-400 transition-all duration-200"
-            >
-              Candidates
-            </a>
-          </div>
-          <div className="flex space-x-4">
-            <a
-              href="#"
-              className="hover:text-blue-500 transition-colors duration-300"
-            >
-              <FaFacebookF />
-            </a>
-            <a
-              href="#"
-              className="hover:text-blue-400 transition-colors duration-300"
-            >
-              <FaTwitter />
-            </a>
-            <a
-              href="#"
-              className="hover:text-pink-500 transition-colors duration-300"
-            >
-              <FaInstagram />
-            </a>
-            <a
-              href="#"
-              className="hover:text-blue-600 transition-colors duration-300"
-            >
-              <FaLinkedinIn />
-            </a>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };

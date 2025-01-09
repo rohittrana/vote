@@ -1,17 +1,15 @@
-module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
-      animation: {
-        fadeIn: 'fadeIn 1s ease-in-out',
-      },
-      keyframes: {
-        fadeIn: {
-          from: { opacity: '0', transform: 'translateY(20px)' },
-          to: { opacity: '1', transform: 'translateY(0)' },
-        },
+      gap: {
+        "max-1vw-12px": "max(1vw, 12px)"
       },
     },
   },
   plugins: [],
-};
+}
